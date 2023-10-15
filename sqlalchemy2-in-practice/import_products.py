@@ -1,6 +1,7 @@
 import csv
+
 from db import Model, Session, engine
-from models import Product, Manufacturer
+from models import Manufacturer, Product
 
 
 def main():
@@ -16,7 +17,7 @@ def main():
                 for row in reader:
 
                     
-                    pass
+                    # pass
                     # print(row)
                     # {'country': 'UK', 'manufacturer': 'Acorn Computers Ltd', 'name': 'Acorn Atom', 'cpu': '6502', 'year': '1980'}
 
@@ -24,17 +25,17 @@ def main():
 
                     # row['year'] = int(row['year'])
 
-                    # # pop (k,v) from row_dict because Product object only have manufacturer_id not manufacturer field
-                    # manufacturer = row.pop('manufacturer') 
+                    # pop (k,v) from row_dict because Product object only have manufacturer_id not manufacturer field
+                    manufacturer = row.pop('manufacturer') 
 
 
-                    # p = Product(**row)
+                    p = Product(**row)
 
-                    # if manufacturer not in all_manufacturers:
-                    #     m = Manufacturer(name=manufacturer)
-                    #     session.add(m)
-                    #     all_manufacturers[manufacturer] = m
-                    # all_manufacturers[manufacturer].products.append(p)
+                    if manufacturer not in all_manufacturers:
+                        m = Manufacturer(name=manufacturer)
+                        session.add(m)
+                        all_manufacturers[manufacturer] = m
+                    all_manufacturers[manufacturer].products.append(p)
 
 
 if __name__ == '__main__':
