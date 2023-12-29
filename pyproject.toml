@@ -21,6 +21,11 @@ python-dotenv = "^1.0.0"
 typing-extensions = "^4.7.1"
 psycopg2-binary = "^2.9.7"
 redis = "^5.0.1"
+jupyterlab-code-formatter = "^2.2.1"
+jupyterlab = "^4.0.9"
+jupyterlab-lsp = "^5.0.1"
+mypy = "^1.8.0"
+bottle = "^0.12.25"
 
 
 [build-system]
