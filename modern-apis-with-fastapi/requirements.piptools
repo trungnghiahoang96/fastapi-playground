@@ -1,0 +1,15 @@
+##### foundations #####
+requests
+httpx
+bs4
+colorama
+
+##### fastapi #####
+fastapi
+uvicorn
+httpx
+jinja2
+aiofiles
+requests
+uvloop
+httptools
