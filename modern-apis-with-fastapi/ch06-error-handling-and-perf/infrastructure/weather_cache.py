@@ -6,8 +6,8 @@ lifetime_in_hours = 1.0
 
 
 def get_weather(city: str, state: Optional[str], country: str, units: str) -> Optional[dict]:
-    key = __create_key(city, state, country, units)
-    data: dict = __cache.get(key)
+    key = __create_key(city, state, country, units)  # type: ignore
+    data: dict = __cache.get(key) # type: ignore
     if not data:
         return None
 

@@ -1,7 +1,7 @@
 from typing import Optional, Tuple
+
 import httpx
 from httpx import Response
-
 from infrastructure import weather_cache
 from models.validation_error import ValidationError
 
@@ -29,7 +29,7 @@ async def get_report_async(city: str, state: Optional[str], country: str, units:
     data = resp.json()
     forecast = data['main']
 
-    weather_cache.set_weather(city, state, country, units, forecast)
+    weather_cache.set_weather(city, state, country, units, forecast) #type: ignore
 
     return forecast
 

@@ -3,10 +3,9 @@ from pathlib import Path
 
 import fastapi
 import uvicorn
-from starlette.staticfiles import StaticFiles
-
 from api import weather_api
 from services import openweather_service
+from starlette.staticfiles import StaticFiles
 from views import home
 
 api = fastapi.FastAPI()
@@ -19,6 +18,7 @@ def configure():
 
 def configure_api_keys():
     file = Path('settings.json').absolute()
+    print(file)
     if not file.exists():
         print(f'WARNING: {file} file not found, you cannot continue, please see settings_template.json')
         raise Exception('settings.json file not found, you cannot continue, please see settings_template.json')
@@ -39,6 +39,6 @@ if __name__ == '__main__':
     # uvicorn was updated, and it's type definitions don't match FastAPI,
     # but the server and code still work fine. So ignore PyCharm's warning:
     # noinspection PyTypeChecker
-    uvicorn.run(api, port=8000, host='127.0.0.1')
+    uvicorn.run(api, port=8000, host='127.0.0.1') # ignore
 else:
     configure()

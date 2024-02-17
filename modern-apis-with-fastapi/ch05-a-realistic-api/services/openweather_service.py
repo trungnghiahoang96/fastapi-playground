@@ -1,10 +1,11 @@
 from typing import Optional
+
 import httpx
 
 api_key: Optional[str] = None
 
 
-async def get_report_async(city: str, state: Optional[str], country: str, units: str) -> dict:
+async def get_report_async(city: str, state: Optional[str], country: str, units: Optional[str]) -> dict:
     if state:
         q = f'{city},{state},{country}'
     else:
