@@ -4,11 +4,10 @@ from pathlib import Path
 
 import fastapi
 import uvicorn
-from starlette.staticfiles import StaticFiles
-
 from api import weather_api
 from models.location import Location
 from services import openweather_service, report_service
+from starlette.staticfiles import StaticFiles
 from views import home
 
 api = fastapi.FastAPI()

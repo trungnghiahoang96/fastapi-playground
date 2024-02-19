@@ -21,6 +21,6 @@ async def add_report(description: str, location: Location) -> Report:
     # Would be an async call here.
     __reports.append(report)
 
-    __reports.sort(key=lambda r: r.created_date, reverse=True)
+    __reports.sort(key=lambda r: r.created_date, reverse=True) #type: ignore
 
     return report

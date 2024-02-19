@@ -1,8 +1,7 @@
-from typing import Optional, List
+from typing import List, Optional
 
 import fastapi
 from fastapi import Depends
-
 from models.location import Location
 from models.reports import Report, ReportSubmittal
 from models.validation_error import ValidationError
@@ -34,3 +33,6 @@ async def reports_post(report_submittal: ReportSubmittal) -> Report:
     loc = report_submittal.location
 
     return await report_service.add_report(d, loc)
+
+
+# curl -d '{"description":  "Tornado! lay off", "location": {"city": "hanoi"} }' -H "Content-Type: application/json" -X POST http://localhost:8000/api/reports 
