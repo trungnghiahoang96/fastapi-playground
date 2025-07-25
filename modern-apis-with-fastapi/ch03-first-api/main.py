@@ -32,7 +32,8 @@ def calculate(x: int, y: int, z: Optional[int] = None):
     if z is not None:
         value /= z
 
-    return {'x': x, 'y': y, 'z': z, 'value': value}
+        return {'x': x, 'y': y, 'z': z, 'value': value}
+    
 
 
 # uvicorn was updated, and it's type definitions don't match FastAPI,
